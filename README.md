@@ -1,5 +1,5 @@
 
-# Actions RedMi-K3 OpenWrt
+# Actions Phicomm-K3 OpenWrt
 
 
 ## 配置文件
