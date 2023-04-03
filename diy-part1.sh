@@ -48,5 +48,5 @@ wget -nv https://github.com/yangxu52/Phicomm-k3-Wireless-Firmware/raw/master/brc
 echo '=========Replace k3 wireless firmware OK!========='
 
 # 添加gn 临时解决方案
-cd package
-svn co https://github.com/kenzok8/small-package/trunk/gn
+# cd package
+# svn co https://github.com/kenzok8/small-package/trunk/gn
