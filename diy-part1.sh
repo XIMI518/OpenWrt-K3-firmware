@@ -18,11 +18,11 @@ echo 'src-git kenzo https://github.com/kenzok8/openwrt-packages' >>feeds.conf.de
 echo 'src-git small https://github.com/kenzok8/small' >>feeds.conf.default
 # git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 
-echo '添加jerrykuku的argon-mod主题'
-rm -rf package/lean/luci-theme-argon  
-git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon package/lean/luci-theme-argon
-git clone https://github.com/jerrykuku/luci-app-argon-config.git package/lean/luci-app-argon-config
-echo '=========Add argon-mod OK!========='
+# echo '添加jerrykuku的argon-mod主题'
+# rm -rf package/lean/luci-theme-argon  
+# git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon package/lean/luci-theme-argon
+# git clone https://github.com/jerrykuku/luci-app-argon-config.git package/lean/luci-app-argon-config
+# echo '=========Add argon-mod OK!========='
 
 echo '添加lwz322的K3屏幕插件'
 rm -rf package/lean/luci-app-k3screenctrl
@@ -42,7 +42,11 @@ sed -i 's/k3screenctrl/luci-app-k3screenctrl/g' target/linux/bcm53xx/image/Makef
 echo '=========Remove other devices of bcm53xx OK!========='
 
 #1.'asus_dhd24' 2.'ac88u_20' 3.'69027'
-firmware='ac88u_20'
+firmware='69027'
 echo '替换K3的无线驱动为asus-dhd24'
 wget -nv https://github.com/yangxu52/Phicomm-k3-Wireless-Firmware/raw/master/brcmfmac4366c-pcie.bin.${firmware} -O package/lean/k3-brcmfmac4366c-firmware/files/lib/firmware/brcm/brcmfmac4366c-pcie.bin
 echo '=========Replace k3 wireless firmware OK!========='
+
+# 添加gn 临时解决方案
+cd package
+svn co https://github.com/kenzok8/small-package/trunk/gn
